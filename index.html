@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        .item {
+            width: 150px;
+            height: 150px;
+            background-size:100%;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            margin-left: 20px;
+            background-color: red;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 200px;
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .active{
+            border: 5px solid green;
+        }
+        .none{
+            opacity: 1;
+        }
+        .none2{
+            opacity: 1;
+        }
+        .none3{
+            opacity: 1;
+        }
+        .none4{
+            opacity: 1;
+        }
+        .none5{
+            opacity: 1;
+        }
+        .none6{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+    </div>
+    <script type="text/javascript">
+    //див-родитель
+    let check = 0
+    let row = document.querySelector(".row");
+    let number = 0
+
+    //хранение картинок
+    let images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
+
+    let random = function(arg){
+       let rand = Math.random() * arg
+       let round = Math.round(rand)
+       return round
+    }
+    
+    for(let i=0; i<12; i=i+1){
+     
+
+
+     let box = document.createElement("div")
+     row.appendChild(box)
+     let num = random(images.length - 1)
+     box.style.backgroundImage = 'url('+images[num]+')'
+     box.classList.add("item")
+     box.name = images[num]
+     images.splice(num,1);
+     
+
+     
+
+
+     box.onclick = function(){
+        
+        
+
+        if (box.name=="1.png"){
+            check = check + 1
+            console.log("check")
+            box.classList.add("active")
+            box.classList.add("none")
+            if(check == 2){
+               document.querySelectorAll(".none")[0].style.opacity = "0";
+               document.querySelectorAll(".none")[1].style.opacity = "0";
+               check = 0
+            }
+        }
+        if (box.name=="2.png"){
+            check = check + 1
+            console.log("check")
+            box.classList.add("active")
+            box.classList.add("none2")
+            if(check == 2){
+               document.querySelectorAll(".none2")[0].style.opacity = "0";
+               document.querySelectorAll(".none2")[1].style.opacity = "0";
+               check = 0
+            }
+        }
+        if (box.name=="3.png"){
+            check = check + 1
+            console.log("check")
+            box.classList.add("active")
+            box.classList.add("none3")
+            if(check == 2){
+               document.querySelectorAll(".none3")[0].style.opacity = "0";
+               document.querySelectorAll(".none3")[1].style.opacity = "0";
+               check = 0
+            }
+        }
+        if (box.name=="4.png"){
+            check = check + 1
+            console.log("check")
+            box.classList.add("active")
+            box.classList.add("none4")
+            if(check == 2){
+               document.querySelectorAll(".none4")[0].style.opacity = "0";
+               document.querySelectorAll(".none4")[1].style.opacity = "0";
+               check = 0   
+            }
+        }
+        if (box.name=="5.png"){
+            check = check + 1
+            console.log("check")
+            box.classList.add("active")
+            box.classList.add("none5")
+            if(check == 2){
+               document.querySelectorAll(".none5")[0].style.opacity = "0";
+               document.querySelectorAll(".none5")[1].style.opacity = "0";
+               check = 0
+            }
+        }
+        if (box.name=="6.png"){
+            check = check + 1
+            console.log("check")
+            box.classList.add("active")
+            box.classList.add("none6")
+            if(check == 2){
+               document.querySelectorAll(".none6")[0].style.opacity = "0";
+               document.querySelectorAll(".none6")[1].style.opacity = "0";
+               check = 0
+            }
+        }
+     }
+    } 
+
+    
+
+    
+
+    </script>
+</body>
+</html>
